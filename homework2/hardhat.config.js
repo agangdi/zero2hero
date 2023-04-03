@@ -3,7 +3,7 @@ require("@nomiclabs/hardhat-ethers");
 require("@openzeppelin/hardhat-upgrades");
 require("@nomiclabs/hardhat-etherscan");
 
-const { mnemonic } = require('./secrets.json');
+const { mnemonic, bscscanApiKey } = require('./secrets.json');
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -58,5 +58,10 @@ module.exports = {
   },
   mocha: {
     timeout: 20000
+  },
+  etherscan: {
+    apiKey: {
+      bscTestnet: bscscanApiKey
+    }
   }
 };
